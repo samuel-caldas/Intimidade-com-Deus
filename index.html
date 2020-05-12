@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Intimidade com Deus</title>
+<style type="text/css">
+body,td,th {
+	font-family: "Segoe UI";
+	color: #333;
+	font-weight: lighter;
+}
+body {
+	background-repeat: no-repeat;
+	margin: 0px;
+	background-attachment: fixed;
+	background-position: center top;
+	background-color: #FFF;
+	background-size: 100% auto;
+	background-image: url(img/background.jpg);
+}
+a:hover {
+	text-decoration: underline;
+}
+a:link, a:visited, a:active {
+	text-decoration: none;
+}
+.header{
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+	background-image: url(img/background-header.png);
+	display: block;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 25px;
+	color: #FFF;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.pag{
+	display: block;
+	width: 800px;
+	margin-left: -400px;
+	position: relative;
+	left: 50%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#slides{
+}
+#slides .slides_container {
+	width: 700px;
+	margin-left: -350px;
+	position: relative;
+	left: 50%;
+	display: none;
+	float: left;
+}
+.slides_container a {
+	display:block;
+	height: 300px;
+	width: 700px;
+}
+
+.slides_container a img {
+	display: block;
+	height: 300px;
+	width: 700px;
+}
+#slides .next,#slides .prev {
+	position: relative;
+	top: 107px;
+	left: -100px;
+	width: 24px;
+	height: 43px;
+	display: block;
+	z-index: 101;
+	float: left;
+}
+
+#slides .next {
+	left:630px;
+}
+#slides ul{
+	float: left;
+}
+.frame{
+	display: block;
+	width: 800px;
+	height: 300px;
+	margin-left: -400px;
+	position: absolute;
+	left: 50%;
+	float: left;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="js/slides.min.jquery.js"></script>
+<script>
+$(function(){
+	$('#slides').slides({
+		preload: true,
+		preloadImage: 'img/loading.gif',
+		play: 5000,
+		pause: 2500,
+		hoverPause: true
+	});
+	$('#slides_two').slides({
+		preload: true,
+		generateNextPrev: true
+	});
+	$('#slides_three').slides({
+		preload: true,
+		preloadImage: 'img/loading.gif',
+		effect: 'slide, fade',
+		crossfade: true,
+		slideSpeed: 350,
+		fadeSpeed: 500,
+		generateNextPrev: true,
+		generatePagination: false
+	});
+});
+	</script>
+</head>
+
+<body>
+<div class="header">
+<img src="img/example-frame.png">
+<div id="slides">
+	<div class="slides_container">
+    	<a href="http://www.flickr.com/photos/jliba/4665625073/" title="145.365 - Happy Bokeh Thursday! | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-1.jpg" width="570" height="270" alt="Slide 1"></a>
+       <a href="http://www.flickr.com/photos/stephangeyer/3020487807/" title="Taxi | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-2.jpg" width="570" height="270" alt="Slide 2"></a>
+	</div>
+    
+    <a href="#" class="prev"><img src="img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+		<a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+	</div>
+</div>
+
+</div>
+<div class="pag">
+</div>
+</body>
+</html>

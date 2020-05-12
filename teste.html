@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+<style>
+body {
+	background-image: url(img/bkg.jpg);
+	background-repeat: no-repeat;
+	margin: 0px;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size:100% 100%;
+}
+#myBook{
+	height: 707px;
+	width: 1000px;
+	display: block;
+	position: relative;
+	margin-left: -500px;
+	left: 50%;
+}
+#myBook div{
+
+	display: block;
+	float: left;
+	height: 707px;
+	position: absolute;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 100% 100%;
+	background-color: #000;
+}
+.pl,.pr,.pe,.pc,.pd{
+	-webkit-transition: all 1500ms ease 0s;
+	-moz-transition: all 1500ms ease 0s;
+	-ms-transition: all 1500ms ease 0s;
+	-o-transition: all 1500ms ease 0s;
+	transition: all 1500ms ease 0s;
+	visibility: visible;
+}
+.pl{
+	left: 0px;
+	width: 500px;
+	-moz-box-shadow:-5px 5px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow:-5px 5px 5px rgba(0,0,0,0.1);
+	box-shadow:-5px 5px 5px rgba(0,0,0,0.1);
+}
+.pr{
+	left: 500px;
+	width: 500px;
+	z-index: 100;
+	-moz-box-shadow:5px 5px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow:5px 5px 5px rgba(0,0,0,0.1);
+	box-shadow:5px 5px 5px rgba(0,0,0,0.1);
+}
+.pd, .pc, .pe{
+	visibility: hidden;
+}
+.pd{
+	left: 1000px;
+	width: 0px;
+}
+.pc{
+	left: 500px;
+	width: 0px;
+	z-index: 0;
+}
+.pe{
+	left: 0px;
+	width: 0px;
+}
+</style>
+<script>
+function gor(pag){
+var p0=document.getElementById('p'+(pag-1));
+var p1=document.getElementById('p'+(pag));
+var p2=document.getElementById('p'+(pag+1));
+var p3=document.getElementById('p'+(pag+2));
+	p2.style.zIndex='20';
+	p1.style.zIndex='13';
+	p3.style.zIndex='12';
+	window.setTimeout(function(){
+		p1.className='pc';
+		p2.className='pl';
+		p3.className='pr';
+		window.setTimeout(function(){
+			p2.style.zIndex='14';
+			p1.style.zIndex='12';
+			p3.style.zIndex='13';
+		},1000);
+	},500);
+	//window.setTimeout(function(){p0.className='pe';},2000);
+}
+function gol(pag){
+
+}
+</script>
+</head>
+
+<body>
+
+<div id="myBook">
+  	<div class="pr" id="p1" onClick="gor(1);" style="background:url(img/0-capa.jpg); z-index:14;"></div>
+    <div class="pd" id="p2" onClick="gol(2);" style="background:url(img/1.jpg); z-index:13;"></div>
+  	<div class="pr" id="p3" onClick="gor(3);" style="background:url(img/2.jpg); z-index:12;"></div>
+    <div class="pd" id="p4" onClick="gol(4);" style="background:url(img/3.jpg); z-index:11;"></div>
+    <div class="pr" id="p5" onClick="gor(5);" style="background:url(img/4.jpg); z-index:10;"></div>
+    <div class="pd" id="p6" onClick="gol(6);" style="background:url(img/5.jpg); z-index:9;"></div>
+    <div class="pr" id="p7" onClick="gor(7);" style="background:url(img/6.jpg); z-index:8;"></div>
+    <div class="pd" id="p8" onClick="gol(8);" style="background:url(img/7.jpg); z-index:7;"></div>
+    <div class="pr" id="p9" onClick="gor(9);" style="background:url(img/8.jpg); z-index:6;"></div>
+    <div class="pd" id="p10" onClick="gol(10);" style="background:url(img/9.jpg); z-index:5;"></div>
+    <div class="pr" id="p11" onClick="gor(11);" style="background:url(img/10.jpg); z-index:4;"></div>
+    <div class="pd" id="p12" onClick="gol(12);" style="background:url(img/11.jpg); z-index:3;"></div>
+    <div class="pr" id="p13" onClick="gor(13);" style="background:url(img/12.jpg); z-index:2;"></div>
+    <div class="pd" id="p14" onClick="gol(14);" style="background:url(img/fundo.jpg); z-index:1;"></div>
+</div>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="550" align="left"><button onClick="gop(3);">&lt;</button></td>
+    <td width="550" align="right"><button onClick="gop(3);">&gt;</button></td>
+  </tr>
+</table>
+
+</body>
+</html>
